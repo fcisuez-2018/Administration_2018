@@ -1,0 +1,52 @@
+﻿@using Admin.Models
+@model IEnumerable<Department>
+@{
+    ViewBag.Title = "Department";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<center>@Html.ActionLink("إنشاء برنامج جديد","Create_Dep","Admin", new { @class = "btn btn-success" })</center>
+<br />
+<center>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(ww => ww.DepartmentID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Departmenttxt)</th>
+            <th>@Html.DisplayNameFor(ww => ww.DeptartmentCode)</th>
+            <th>@Html.DisplayNameFor(ww => ww.FacultyID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.OrderCode)</th>
+            <th>@Html.DisplayNameFor(ww => ww.FacultyName_English)</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ww => item.DepartmentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Departmenttxt)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.DeptartmentCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.FacultyID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.OrderCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.FacultyName_English)
+                </td>
+
+
+                <td>
+                    <a href="/Admin/Edit_Dep/@item.DepartmentID" class="btn btn-primary btn-xs"><i class="fa fa-pencil"> Change</i></a>
+                </td>
+            </tr>
+        }
+    </table>
+</center>
+

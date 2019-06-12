@@ -1,0 +1,25 @@
+﻿@model Admin.Models.CourseSemester
+@{
+    ViewBag.Title = "Edit_CourseSemester";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Edit_CourseSemester", "Admin", FormMethod.Post))
+{
+
+
+
+    <div class="form-group row" name="Code ">
+
+        @Html.LabelFor(ww => ww.Code, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+
+
+            @Html.EditorFor(ww => ww.Code, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="col-sm-10">
+            @Html.ValidationMessageFor(ww => ww.Code)
+        </div>
+    </div>
+
+}

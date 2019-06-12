@@ -1,0 +1,656 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #306149;
+            border: inset;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 150px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+                .button span:after {
+                    content: '\00bb';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+
+            .button:hover span {
+                padding-right: 25px;
+            }
+
+                .button:hover span:after {
+                    opacity: 1;
+                    right: 0;
+                }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Admin </title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="~/LayoutResources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="~/LayoutResources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="~/LayoutResources/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/LayoutResources/css/sb-admin.css" rel="stylesheet">
+
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/EditLayOut/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    @* <link rel="stylesheet" type="text/css" href="~/EditLayOut/vendor/bootstrap/css/bootstrap.min.css">*@
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/EditLayOut/css/main.css">
+    <!--===============================================================================================-->
+
+
+</head>
+<style>
+    .logo-custom {
+        border-radius: 50%;
+    }
+
+    .badge badge-danger {
+        float: right;
+    }
+</style>
+<body id="page-top">
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+        <img src="~/LayoutResources/logo.png" width="50" height="50" class="logo-custom">&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="navbar-brand mr-1" href="/Admin/Home"><span style="color:white;font-size: 30px">FCI </span ></a>
+
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="~/LayoutResources/=" #">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Navbar Search -->
+        <!-- <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+           <div class="input-group">
+
+             <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+             <div class="input-group-append">
+               <button class="btn btn-primary" type="button">
+                 <i class="fas fa-search"></i>
+               </button>
+             </div>
+           </div>
+         </form>-->
+
+        <a class="nav-link dropdown" href="/Admin/Home" aria-haspopup="true" aria-expanded="false">
+
+            <span class="badge badge-danger"> الصفحه الرئيسيه</span>
+        </a>
+
+    
+
+
+    </nav>
+
+    <!--<div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="~/LayoutResources/="#">
+                        <img class="logo-custom" src="~/LayoutResources/="assets/img/logo.png" alt=" Logo" />
+                    </a>
+                    <h1>F C I</h1>
+                </div>
+                <div class="navbar-collapse collapse move-me">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="~/LayoutResources/="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="~/LayoutResources/="setting.html" target="blank">All Students</a>
+
+                        </li>
+
+    <li>
+                            <a href="~/LayoutResources/="Forms\request\LogInForm.html">All Courses</a>
+
+                        </li>
+                        <li>
+                            <a href="~/LayoutResources/="AdminDashboardFin/index.html">Program Courses</a>
+                        </li>
+
+                        <li>
+                            <a href="~/LayoutResources/="AdminDashboardFin/index.html">Departments</a>
+                        </li>
+
+                        <li>
+                            <a href="~/LayoutResources/="AdminDashboardFin/index.html">Levels</a>
+                        </li>
+
+                        <li>
+                            <a href="~/LayoutResources/="AdminDashboardFin/index.html">Study Programs</a>
+                        </li>
+
+                        <li>
+                            <a href="~/LayoutResources/="AdminDashboardFin/index.html">Sections</a>
+                        </li>
+
+                        <li>
+                            <a href="~/LayoutResources/="AdminDashboardFin/index.html">Controls</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>-->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/allstudents">
+                    <i class="fas fa-fw "></i>
+                    <center> <h1 class="btn-danger"> <span class="btn">كل المستويات </span> </h1> </center>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/IT">
+                    <i class="fas fa-fw "></i>
+                    <center> <h1 class="btn-secondary"> <span class="btn">تكنولوجيا المعلومات</span> </h1> </center>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/allstudents_CS">
+                    <i class="fas fa-fw "></i>
+                    <center>  <h1 class="btn-secondary"> <span class="btn">  علوم الحاسب </span> </h1></center>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/allstudentsgeneral">
+                    <i class="fas fa-fw "></i>
+                    <center>  <h1 class="btn-secondary"> <span class="btn">عامه</span> </h1></center>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/allstudents_IS">
+                    <i class="fas fa-fw "></i>
+                    <center> <h1 class="btn-secondary"> <span class="btn"> نظم المعلومات </span> </h1> </center>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/allstudentsSoftware">
+                    <i class="fas fa-fw "></i>
+                    <center> <h1 class="btn-secondary"> <span class="btn">هندسه البرمجيات </span> </h1> </center>
+                </a>
+            </li>
+       
+
+       
+        </ul>
+
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+                <!-- DataTables  -->
+                <!--<div class="card mb-3">
+                    <div class="card-header">
+                      <i class="fas fa-table"></i>
+                      Data Table </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                              <tr>
+                                <th></th>
+                                <th>phon</th>
+                                <th>Position</th>
+                                <th>Age</th>
+                                <th>gander</th>
+                                <th>kind of blood</th>
+                              </tr>
+                            </thead>
+                            <tfoot>
+                              <tr>
+                                <th>Name</th>
+                                <th>phone</th>
+                                <th>Position</th>
+                                <th>Age</th>
+                                <th> gander</th>
+                                <th>kind of blood</th>
+                              </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>0120000089</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>male</td>
+                                    <td>o-</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Garrett Winters</td>
+                                    <td>0120000056</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>famale</td>
+                                    <td>A+</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Ashton Cox</td>
+                                    <td>0120000678</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>male</td>
+                                    <td>o+</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Cedric Kelly</td>
+                                    <td>0120000674</td>
+                                    <td>Edinburgh</td>
+                                    <td>22</td>
+                                    <td>male</td>
+                                    <td>AB-</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Airi Satou</td>
+                                    <td>0120000894</td>
+                                    <td>Tokyo</td>
+                                    <td>33</td>
+                                    <td>famale</td>
+                                    <td>-B</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Brielle Williamson</td>
+                                    <td> 0120000324</td>
+                                    <td>New York</td>
+                                    <td>61</td>
+                                    <td>male</td>
+                                    <td>O+</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Herrod Chandler</td>
+                                    <td>0120000876</td>
+                                    <td>San Francisco</td>
+                                    <td>59</td>
+                                    <td>famale</td>
+                                    <td>A+</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Rhona Davidson</td>
+                                    <td> 0120000564</td>
+                                    <td>Tokyo</td>
+                                    <td>55</td>
+                                    <td>male</td>
+                                    <td>B+</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Colleen Hurst</td>
+                                    <td>0120000653</td>
+                                    <td>San Francisco</td>
+                                    <td>39</td>
+                                    <td>famale</td>
+                                    <td>o-</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Sonya Frost</td>
+                                    <td> 0120001234</td>
+                                    <td>Edinburgh</td>
+                                    <td>23</td>
+                                    <td>male</td>
+                                    <td>-AB</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Tiger Nixon</td>
+                                      <td>0120000089</td>
+                                      <td>Edinburgh</td>
+                                      <td>61</td>
+                                      <td>male</td>
+                                      <td>o-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Garrett Winters</td>
+                                      <td>0120000056</td>
+                                      <td>Tokyo</td>
+                                      <td>63</td>
+                                      <td>famale</td>
+                                      <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Ashton Cox</td>
+                                      <td>0120000678</td>
+                                      <td>San Francisco</td>
+                                      <td>66</td>
+                                      <td>male</td>
+                                      <td>o+</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Cedric Kelly</td>
+                                      <td>0120000674</td>
+                                      <td>Edinburgh</td>
+                                      <td>22</td>
+                                      <td>male</td>
+                                      <td>AB-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Airi Satou</td>
+                                      <td>0120000894</td>
+                                      <td>Tokyo</td>
+                                      <td>33</td>
+                                      <td>famale</td>
+                                      <td>A+</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Brielle Williamson</td>
+                                      <td> 0120000324</td>
+                                      <td>New York</td>
+                                      <td>61</td>
+                                      <td>male</td>
+                                      <td>A-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Herrod Chandler</td>
+                                      <td>0120000876</td>
+                                      <td>San Francisco</td>
+                                      <td>59</td>
+                                      <td>famale</td>
+                                      <td>A+</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Rhona Davidson</td>
+                                      <td> 0120000564</td>
+                                      <td>Tokyo</td>
+                                      <td>55</td>
+                                      <td>male</td>
+                                      <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Colleen Hurst</td>
+                                      <td>0120000653</td>
+                                      <td>San Francisco</td>
+                                      <td>39</td>
+                                      <td>famale</td>
+                                      <td>o-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Sonya Frost</td>
+                                      <td> 0120001234</td>
+                                      <td>Edinburgh</td>
+                                      <td>23</td>
+                                      <td>male</td>
+                                      <td>o+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>0120000089</td>
+                                        <td>Edinburgh</td>
+                                        <td>61</td>
+                                        <td>male</td>
+                                        <td>o-</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Garrett Winters</td>
+                                        <td>0120000056</td>
+                                        <td>Tokyo</td>
+                                        <td>63</td>
+                                        <td>famale</td>
+                                        <td>AB</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Ashton Cox</td>
+                                        <td>0120000678</td>
+                                        <td>San Francisco</td>
+                                        <td>66</td>
+                                        <td>male</td>
+                                        <td>o+</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Cedric Kelly</td>
+                                        <td>0120000674</td>
+                                        <td>Edinburgh</td>
+                                        <td>22</td>
+                                        <td>male</td>
+                                        <td>AB-</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Airi Satou</td>
+                                        <td>0120000894</td>
+                                        <td>Tokyo</td>
+                                        <td>33</td>
+                                        <td>famale</td>
+                                        <td>A+</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Brielle Williamson</td>
+                                        <td> 0120000324</td>
+                                        <td>New York</td>
+                                        <td>61</td>
+                                        <td>male</td>
+                                        <td>B</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Herrod Chandler</td>
+                                        <td>0120000876</td>
+                                        <td>San Francisco</td>
+                                        <td>59</td>
+                                        <td>famale</td>
+                                        <td>A+</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Rhona Davidson</td>
+                                        <td> 0120000564</td>
+                                        <td>Tokyo</td>
+                                        <td>55</td>
+                                        <td>male</td>
+                                        <td>B+</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Colleen Hurst</td>
+                                        <td>0120000653</td>
+                                        <td>San Francisco</td>
+                                        <td>39</td>
+                                        <td>famale</td>
+                                        <td>o-</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Sonya Frost</td>
+                                        <td> 0120001234</td>
+                                        <td>Edinburgh</td>
+                                        <td>23</td>
+                                        <td>male</td>
+                                        <td>o+</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Tiger Nixon</td>
+                                          <td>0120000089</td>
+                                          <td>Edinburgh</td>
+                                          <td>61</td>
+                                          <td>male</td>
+                                          <td>o-</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Garrett Winters</td>
+                                          <td>0120000056</td>
+                                          <td>Tokyo</td>
+                                          <td>63</td>
+                                          <td>famale</td>
+                                          <td>ab</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Ashton Cox</td>
+                                          <td>0120000678</td>
+                                          <td>San Francisco</td>
+                                          <td>66</td>
+                                          <td>male</td>
+                                          <td>o+</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Cedric Kelly</td>
+                                          <td>0120000674</td>
+                                          <td>Edinburgh</td>
+                                          <td>22</td>
+                                          <td>male</td>
+                                          <td>AB-</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Airi Satou</td>
+                                          <td>0120000894</td>
+                                          <td>Tokyo</td>
+                                          <td>33</td>
+                                          <td>famale</td>
+                                          <td>A-</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Brielle Williamson</td>
+                                          <td> 0120000324</td>
+                                          <td>New York</td>
+                                          <td>61</td>
+                                          <td>male</td>
+                                          <td>B</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Herrod Chandler</td>
+                                          <td>0120000876</td>
+                                          <td>San Francisco</td>
+                                          <td>59</td>
+                                          <td>famale</td>
+                                          <td>A+</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Rhona Davidson</td>
+                                          <td> 0120000564</td>
+                                          <td>Tokyo</td>
+                                          <td>55</td>
+                                          <td>male</td>
+                                          <td>B+</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Colleen Hurst</td>
+                                          <td>0120000653</td>
+                                          <td>San Francisco</td>
+                                          <td>39</td>
+                                          <td>famale</td>
+                                          <td>o-</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Sonya Frost</td>
+                                          <td> 0120001234</td>
+                                          <td>Edinburgh</td>
+                                          <td>23</td>
+                                          <td>male</td>
+                                          <td>o+</td>
+                                        </tr>
+                                        </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+                </div> -->
+                <!-- /.container-fluid -->
+                <!-- Sticky Footer -->
+
+            </div>
+            <!-- /.content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="~/LayoutResources/=" #page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="~/LayoutResources/=" login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<!-- Bootstrap core JavaScript-->
+            <script src="~/LayoutResources/vendor/jquery/jquery.min.js"></script>
+            <script src="~/LayoutResources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Core plugin JavaScript-->
+            <script src="~/LayoutResources/vendor/jquery-easing/jquery.easing.min.js"></script>
+            <!-- Page level plugin JavaScript-->
+            <script src="~/LayoutResources/vendor/chart.js/Chart.min.js"></script>
+            <script src="~/LayoutResources/vendor/datatables/jquery.dataTables.js"></script>
+            <script src="~/LayoutResources/vendor/datatables/dataTables.bootstrap4.js"></script>
+            <!-- Custom scripts for all pages-->
+            <script src="~/LayoutResources/js/sb-admin.min.js"></script>
+            <!-- Demo scripts for this page-->
+            <script src="~/LayoutResources/js/demo/datatables-demo.js"></script>
+            <script src="~/LayoutResources/js/demo/chart-area-demo.js"></script>
+
+            <!--===============================================================================================-->
+            <script src="~/EditLayOut/vendor/jquery/jquery-3.2.1.min.js"></script>
+            <!--===============================================================================================-->
+            <script src="~/EditLayOut/vendor/animsition/js/animsition.min.js"></script>
+            <!--===============================================================================================-->
+            <script src="~/EditLayOut/vendor/bootstrap/js/popper.js"></script>
+            <script src="~/EditLayOut/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <!--===============================================================================================-->
+            <script src="~/EditLayOut/vendor/select2/select2.min.js"></script>
+            <!--===============================================================================================-->
+            <script src="~/EditLayOut/vendor/daterangepicker/moment.min.js"></script>
+            <script src="~/EditLayOut/vendor/daterangepicker/daterangepicker.js"></script>
+            <!--===============================================================================================-->
+            <script src="~/EditLayOut/vendor/countdowntime/countdowntime.js"></script>
+            <!--===============================================================================================-->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+            <script src="~/EditLayOut/js/map-custom.js"></script>
+            <!--===============================================================================================-->
+            <script src="~/EditLayOut/js/main.js"></script>*@
+
+
+</body>
+</html>

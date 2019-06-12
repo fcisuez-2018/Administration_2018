@@ -1,0 +1,129 @@
+﻿@model IEnumerable<AdminstratorModule.Models.Doctors>
+@{
+    ViewBag.Title = "Doctors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <center>
+    <table class="table-hover table-bordered  table-striped body-content text-center ">
+        <tr>
+            <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Name_Txt)</th>
+            <th>@Html.DisplayNameFor(ww => ww.StatusID)</th>
+            @*<th>@Html.DisplayNameFor(ww => ww.OrderCode)</th>*@
+            <th>@Html.DisplayNameFor(ww => ww.Arabic_doctorName)</th>
+
+
+        </tr>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(ww => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(ww => item.Name_Txt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(ww => item.StatusID)
+                    </td>
+
+                    @*<td>
+                            @Html.DisplayFor(ww => item.OrderCode)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(ww => item.Arabic_doctorName)
+                    </td>
+
+
+
+
+                    <td style="width:100px">
+                        @if (item.StatusID == 1)
+                        {
+                            <font style="color:darkblue">Active</font>
+
+                        }
+                        @if (item.StatusID == 2)
+                        {
+                            <font style="color:Red;">Not Active</font>
+
+
+                        }
+                        @if (item.StatusID == 0)
+                        {
+                            <font style="color:darkturquoise;">Not Working</font>
+
+
+                        }
+
+                    </td>
+
+                    <td style="width:200px">
+                        <centr>
+                            <a href="/Admin/Edit_Doctor/@item.ID" class="btn btn-primary btn-xs"><i class="fa fa-pencil"> Edit</i></a> |
+                            @if (item.StatusID == 1)
+                            {
+
+
+                                @:   @Html.ActionLink("DeActived", "EditActivation_doctor", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-danger btn-xs" })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            }
+                            @if (item.StatusID == 2)
+                            {
+
+
+                                @: @Html.ActionLink("Actived", "EditActivation_doctor", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-info btn-xs" })
+
+
+
+                            }
+
+
+@if (item.StatusID == 0)
+{
+
+
+    @: @Html.ActionLink("Actived", "EditActivation_doctor", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-info btn-xs" })
+
+
+
+
+
+
+}
+                            @*else
+                                 {
+                                  @:   @Html.ActionLink("Else", "EditActivation_Student", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-info btn-xs" }); |
+
+
+                                }*@
+                        </centr>
+
+
+                    </td>
+
+
+                </tr>
+            }
+        }
+    </table>
+</center>
+
+

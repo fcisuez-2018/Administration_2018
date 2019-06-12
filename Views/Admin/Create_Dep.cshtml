@@ -1,0 +1,110 @@
+﻿@model Admin.Models.Department
+@{
+    ViewBag.Title = "Create_Dep";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-contact100">
+
+    <div class="wrap-contact100">
+        <div class="contact100-form-title" style="background-image: url('../../Images/bg-01.jpg'); ">
+            <span class="contact100-form-title-1">
+                Contact Us
+            </span>
+
+            <span class="contact100-form-title-2">
+                Feel free to drop us a line below!
+            </span>
+        </div>
+
+
+
+
+        @using (Html.BeginForm("Create_Dep", "Admin", FormMethod.Post, new { @class = "contact100-form validate-form" }))
+        {
+
+
+
+            <div class="form-group row">
+
+                <div class="col-sm-10">
+                    @*@Html.EditorFor(ww => ww.Id, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @* @Html.TextBoxFor(ww => ww.Id, new { @class = "form-control" })*@
+                    @Html.HiddenFor(ww => ww.DepartmentID)
+                </div>
+                <div class="col-sm-10">
+
+                </div>
+            </div>
+
+
+
+            <div class="wrap-input100 validate-input" name="Departmenttxt">
+
+                @Html.LabelFor(ww => ww.Departmenttxt, htmlAttributes: new { @class = "label-input100" })
+                <div class="col-sm-10">
+                    @*<span class="label-input100">@Html.LabelFor(ww => ww.Departmenttxt)</span>*@
+
+
+                    @Html.EditorFor(ww => ww.Departmenttxt, new { htmlAttributes = new { @class = "input100" } })
+                </div>
+                <div class="col-sm-10">
+                    @Html.ValidationMessageFor(ww => ww.Departmenttxt)
+                </div>
+            </div>
+            /////////////////////////////////////////////////////
+
+            <div class="wrap-input100 validate-input">
+
+                @Html.LabelFor(ww => ww.DeptartmentCode, htmlAttributes: new { @class = "label-input100" })
+                <div class="col-sm-10">
+
+
+                    @Html.EditorFor(ww => ww.DeptartmentCode, new { htmlAttributes = new { @class = "input100" } })
+                </div>
+                <div class="col-sm-10">
+                    @Html.ValidationMessageFor(ww => ww.DeptartmentCode)
+                </div>
+            </div>
+            /////////////////////////////////////////////////////////////
+
+            <div class="wrap-input100 validate-input">
+
+                @Html.LabelFor(ww => ww.FacultyID, htmlAttributes: new { @class = "label-input100" })
+                <div class="col-sm-10">
+
+                    @Html.EditorFor(ww => ww.FacultyID, new { htmlAttributes = new { @class = "input100" } })
+                </div>
+                <div class="col-sm-10">
+                    @Html.ValidationMessageFor(ww => ww.FacultyID)
+                </div>
+            </div>
+            ////////////////////////////////////////////////////////
+
+            <div class="wrap-input100 validate-input">
+
+                @Html.LabelFor(ww => ww.OrderCode, htmlAttributes: new { @class = "label-input100" })
+                <div class="col-sm-10">
+
+                    @Html.EditorFor(ww => ww.OrderCode, new { htmlAttributes = new { @class = "input100" } })
+                </div>
+                <div class="col-sm-10">
+                    @Html.ValidationMessageFor(ww => ww.OrderCode)
+                </div>
+            </div>
+            //////////////////////////////////////////////////////////////////
+            <center>
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </center>
+
+        }
+    </div>
+</div>
+

@@ -1,0 +1,392 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <style>
+         div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    }
+
+    div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    }
+
+    div.scrollmenu a:hover {
+    background-color: #777;s
+
+    </style>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Online Blood Bank that facilitate the proccess of blood donation" />
+
+    <title>Computers and Information</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="~/LayoutResources/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+    <link href="~/LayoutResources/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- FLEXSLIDER CSS -->
+    <link href="~/LayoutResources/assets/css/flexslider.css" rel="stylesheet" />
+    <!-- Google	Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+
+    <!--Angular Framework-->
+    <script src="~/LayoutResources/assets/js/angular.1.6.min.js"></script>
+
+    <!--App Module-->
+    <script src="~/LayoutResources/assets/js/app.js"></script>
+    <!-- CUSTOM STYLE CSS -->
+    <link href="~/LayoutResources/assets/css/style.css" rel="stylesheet" />
+    <link href="~/LayoutResources/Articles/css/article1.css" rel="stylesheet" />
+    <!--<link href="~/LayoutResources/Articles/css/article2.css" rel="stylesheet" />-->
+    <!--JS Code-->
+    <script src="~/LayoutResources/Articles/js/article1.js"></script>
+    <!--<script src="~/LayoutResources/Articles/js/article2.js"></script>-->
+</head>
+<style>
+    .logo-custom {
+        border-radius: 50%;
+    }
+</style>
+
+<body ng-app="BloodBankMod" ng-controller="homeCtrl">
+
+    <div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/Admin/Home">
+                    <img class="logo-custom" src="~/LayoutResources/assets/img/logo.png" alt=" Logo" />
+                </a>
+                <h1>F C I</h1>
+            </div>
+            <div class="navbar-collapse collapse move-me">
+                <ul class="nav navbar-nav navbar-right">
+                   
+
+
+                    <li>
+                        <a class="success" href="/Admin/Admin_Login">تسجيل الدخول</a>
+
+                    </li>
+                    <li>
+                        <a class="success" href="/Admin/allstudents">شئون الطلاب</a>
+
+                    </li>
+                    <li>
+                        <a class="success" href="/Admin/Semesters">الفصول الدراسيه</a>
+
+                    </li>
+                    <li>
+                        <a  class="badge badge-danger"href="/Admin/Home">الرئيسيه</a>
+                    </li>
+                
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!--NAVBAR SECTION END-->
+
+    <div class="home-sec" id="home">
+
+        <div class="overlay">
+
+            <div class="container">
+
+                <div class="row text-center ">
+
+
+
+                    <div class="flexslider set-flexi" id="main-section">
+
+                        <ul class="slides move-me">
+
+                            <!-- Slider 01 -->
+                            <li>
+
+                            <li>
+
+                                <h1>Services Of Faculty Of  Computer And Informations </h1>
+
+
+
+                           
+
+                                <h1>F C I</h1>
+
+                          
+                            <!-- End Slider 01 -->
+                            <!-- Slider 02 -->
+                            <li>
+
+                                <h1>Services Of The University</h1>
+
+
+
+                            </li>
+                            <!-- End Slider 02 -->
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <!--HOME SECTION END-->
+
+    <div id="about-sec" class="container set-pad">
+        <div class="row text-center">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                <h1 data-scroll-reveal="enter from the bottom after 0.2s" class="header-line">Description</h1>
+                <p data-scroll-reveal="enter from the bottom after 0.3s">
+                    <b>    The Service is performed to Faculty Of Computers and Information to facilitate to administrate the system of the college and That is done By Faculty Of Science Under graduated Students .</b>
+                </p>
+            </div>
+
+        </div>
+        <!--/.HEADER LINE END-->
+
+
+    </div>
+    <!-- ABOUT SECTION END-->
+
+    <div id="articleWrapper">
+        <div id="article-sec">
+            <div class="container set-pad">
+                <div class="row text-center">
+
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                        <h1 data-scroll-reveal="enter from the top after 0.1s" class="header-line">ARTICLES </h1>
+                    </div>
+
+                </div>
+                <!--/.HEADER LINE END-->
+
+                <div class="row">
+
+                    <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
+                        <div class="article-div" ng-click="showArticle1=!showArticle1">
+                            <img src="~/LayoutResources/cov2.jpg" class="img-rounded" />
+                            <h3>college Vision</h3>
+                            <hr />
+                            <p>
+                                About the college vision
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the top after 0.5s">
+                        <div class="article-div" ng-click="showArticle2=!showArticle2">
+                            <img src="~/LayoutResources/cm2.jpg" class="img-rounded" />
+                            <h3>college Mission</h3>
+                            <hr />
+                            <p>
+                                Briefly what is the college mission
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
+                        <div class="article-div" ng-click="showArticle3=!showArticle3">
+                            <img src="~/LayoutResources/abc2.jpg" class="img-rounded" />
+                            <h3>About college</h3>
+                            <hr />
+                            <p>
+                                Learn more about the college
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ARTICLE SECTION END-->
+
+        <div class="containerDiv" ng-show="showArticle1" ng-click="showArticle1 =!showArticle1">
+            <!--containerDiv1-->
+            <div class="articleContainerDiv">
+                <!--HeaderDiv-->
+                <div class="headerDiv">
+                    <!--imgDiv-->
+                    <div class="imgDiv">
+                        <img class="img-thumbnail" src="~/LayoutResources/cov2.jpg">
+                    </div>
+
+
+
+                    <hr />
+                </div>
+
+                <!--articleDiv-->
+                <div class="content">
+
+                    <center><h1>THE VISION</h1></center>
+
+                    <p>
+                        The Faculty of Computing and Information - Suez University aims to be a center for the development of programs of study, research and consultancy in computer science, technology and information systems
+                        and the preparation of highly qualified and competitive cadres.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- ARTICLE1 PANE END-->
+
+        <div class="containerDiv" ng-show="showArticle2" ng-click="showArticle2 =!showArticle2">
+            <!--containerDiv1-->
+            <div class="articleContainerDiv">
+                <!--HeaderDiv-->
+                <div class="headerDiv">
+                    <!--imgDiv-->
+                    <div class="imgDiv">
+                        <img class="img-thumbnail" src="~/LayoutResources/cm2.jpg">
+                    </div>
+                    <center><h1>THE MISSION </h1></center>
+
+
+                    <hr />
+                </div>
+
+                <!--articleDiv-->
+                <div class="content">
+                    <p>
+                        Mission College computer science and information technology students
+                        meet the demands of an ever-changing technology field, by offering transfer degree
+                        and certificate programs in Computer Science and Information Technology.<br> <br>
+
+                        •Can earn an associates in science degree or a variety of certificates<br>
+                        •Highly qualified instructors with extensive industry experience<br>
+                        •Hands-on computer labs with the latest equipment<br>
+                        •Project/practice based learning<br>
+                        •Comprehensive transfer and career enhancing courses in the latest technology areas<br>
+                        •Flexible course schedules including evening and online classes.<br>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- ARTICLE2 PANE END-->
+
+
+        <div class="containerDiv" ng-show="showArticle3" ng-click="showArticle3 =!showArticle3">
+            <!--containerDiv1-->
+            <div class="articleContainerDiv">
+                <!--HeaderDiv-->
+                <div class="headerDiv">
+                    <!--imgDiv-->
+                    <div class="imgDiv">
+                        <img class="img-thumbnail" src="~/LayoutResources/abc2.jpg">
+                    </div>
+                    <center><h1>ABOUT COLLEGE </h1></center>
+
+
+                    <hr />
+                </div>
+
+                <!--articleDiv-->
+                <div class="content">
+                    <p>
+                        College Departments:<br>
+                        1.	Computer Science Department.<br>
+                        2.	Information Systems Department.<br>
+                        3.	Information Technology Department.<br>
+                        4.	Software Engineering Department<br>
+
+                        •	Computer Science Department:<br>
+                        It includes the following scientific areas: computer programming and
+                        computer language concepts and their translators - data structures – analysis design
+                        of algorithms - computer operating systems - structure and organization
+                        of computers - data encryption and computer security – compression data -artificial intelligence - smart systems - expert systems - natural language processing – multi agent systems - knowledge base systems - parallel processing and distributed systems - grid and cloud computing -intelligent learning systems - computer education -
+                        identification of models - methods of human contact with the computer -
+                        computer vision - computer drawing systems - arabization of computers.<br>
+                        •	Information Systems Department:<br>
+                        It includes the following scientific areas: Analysis and
+                        design of information systems - Information systems development
+                        methodologies - Information systems architectures - Information
+                        storage and retrieval systems - Database systems - Information systems -
+                        Management information systems - GIS - Multimedia information systems -
+                        Distributed information systems - Information systems - Information theory -
+                        Knowledge discovery in database systems - Object databases -
+                        Information systems economics - Data mining - Data repositories -
+                        Information center management - Integrated information systems -
+                        Methods of developing systems of knowledge Matt - quality assurance
+                        software and information systems - applications of information systems
+                        in various fields - networked information systems.<br>
+                        •	Information Technology Department:<br>
+                        It includes the following scientific fields: Computer networks of all types
+                        - Information networks and applications - Communication technology -
+                        Internet technology - Information and network security - Information processing
+                        - Digital time management - Digital systems - Computer architecture -
+                        Microprocessors and applications - Integrated systems -
+                        Computer systems with potential faults - distributed and parallel computing systems
+                        - dynamic systems and robotics - e-learning and digital libraries - e-business -
+                        e-commerce - image processing.<br>
+                        •	Software Engineering Department:<br>
+                        It includes the following scientific areas: Software Engineering -
+                        Information Engineering - Quality Systems and Software -
+                        Knowledge Engineering - Software Design - Software Maintenance -
+                        Software Testing - SoftwareDevelopment Methodology - Software Security Systems - Software Crisis - Computer Engineering.<br>
+
+
+
+                    </p>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- ARTICLE2 PANE END-->
+
+
+    </div>
+
+
+
+
+
+
+    <!--  Jquery Core Script -->
+    <script src="~/LayoutResources/assets/js/jquery-1.10.2.js"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="~/LayoutResources/assets/js/bootstrap.js"></script>
+    <!--  Flexslider Scripts -->
+    <script src="~/LayoutResources/assets/js/jquery.flexslider.js"></script>
+    <!--  Scrolling Reveal Script -->
+    <script src="~/LayoutResources/assets/js/scrollReveal.js"></script>
+    <!--  Scroll Scripts -->
+    <script src="~/LayoutResources/assets/js/jquery.easing.min.js"></script>
+    <!--  Custom Scripts -->
+    <script src="~/LayoutResources/assets/js/custom.js"></script>
+</body>
+
+</html>

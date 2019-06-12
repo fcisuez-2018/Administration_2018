@@ -1,0 +1,69 @@
+﻿@using Admin.Models
+@model IEnumerable<GPA_Grade>
+
+@{
+    ViewBag.Title = "GBA_Grade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <table class="table-hover table-bordered  table-striped body-content text-center">
+        <tr>
+            <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Grade_English)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Grade_Arabic)</th>
+            <th>@Html.DisplayNameFor(ww => ww.OrderCode)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Points)</th>
+            <th>@Html.DisplayNameFor(ww => ww.semesterID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Course_Points)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Course_cr_points)</th>
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ww => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Grade_English)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Grade_Arabic)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.OrderCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Points)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.semesterID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Course_Points)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Course_cr_points)
+                </td>
+
+
+                <td>
+                    <pre> @Html.ActionLink("Change Info", "Edit_GPA_Grade", "Admin",new {id=item.ID},new {@class= "btn btn-info btn-xs" }) </pre>
+                </td>
+            </tr>
+        }
+    </table>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+

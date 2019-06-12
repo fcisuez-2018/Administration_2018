@@ -1,0 +1,103 @@
+﻿@model Admin.Models.AdminConfig
+@{
+    ViewBag.Title = "AddNewConfig";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-contact100">
+
+    <div class="wrap-contact100">
+        <div class="contact100-form-title" style="background-image: url('../../Images/bg-01.jpg'); ">
+            <span class="contact100-form-title-1">
+                Faculty Of Informations And Computers
+            </span>
+
+            <span class="contact100-form-title-2">
+                All Permissions are Required To Adminstrator !
+            </span>
+        </div>
+
+
+
+
+        @using (Html.BeginForm("AddNewConfig", "Admin", FormMethod.Post, new { @class = "contact100-form validate-form" }))
+            {
+
+
+
+            <div class="form-group row">
+
+                <div class="col-sm-10">
+                    @*@Html.EditorFor(ww => ww.Id, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @* @Html.TextBoxFor(ww => ww.Id, new { @class = "form-control" })*@
+                    @Html.HiddenFor(ww => ww.ID)
+                </div>
+                <div class="col-sm-10">
+
+                </div>
+            </div>
+
+
+
+            <div class="wrap-input100 validate-input" name="ConfigName">
+
+                @Html.LabelFor(ww => ww.ConfigName, htmlAttributes: new { @class = "label-input100" })
+                <div class="col-sm-10">
+                    @*<span class="label-input100">@Html.LabelFor(ww => ww.Departmenttxt)</span>*@
+
+
+                    @Html.EditorFor(ww => ww.ConfigName, new { htmlAttributes = new { @class = "input100" } })
+                </div>
+                <div class="col-sm-10">
+                    @Html.ValidationMessageFor(ww => ww.ConfigName)
+                </div>
+            </div>
+            /////////////////////////////////////////////////////
+
+            <div class="wrap-input100 validate-input">
+
+                @Html.LabelFor(ww => ww.ConfigValue ,htmlAttributes: new { @class = "label-input100" })
+                <div class="col-sm-10">
+
+
+                    @Html.EditorFor(ww => ww.ConfigValue, new { htmlAttributes = new { @class = "input100" } })
+                </div>
+                <div class="col-sm-10">
+                    @Html.ValidationMessageFor(ww => ww.ConfigValue)
+                </div>
+            </div>
+            /////////////////////////////////////////////////////////////
+
+            <div class="wrap-input100 validate-input">
+
+                @Html.LabelFor(ww => ww.parentID, htmlAttributes: new { @class = "label-input100" })
+                <div class="col-sm-10">
+
+                    @Html.EditorFor(ww => ww.parentID, new { htmlAttributes = new { @class = "input100" } })
+                </div>
+                <div class="col-sm-10">
+                    @Html.ValidationMessageFor(ww => ww.parentID)
+                </div>
+            </div>
+            ////////////////////////////////////////////////////////
+
+          
+
+
+            <center>
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        <span>
+                            Add New Config
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </center>
+
+        }
+    </div>
+</div>
+
+
+
+

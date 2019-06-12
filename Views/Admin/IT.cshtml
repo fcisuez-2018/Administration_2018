@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Admin.Models.Student>
+@{
+    ViewBag.Title = "students_IT";
+    Layout = "~/Views/Shared/_LayoutCopy.cshtml";
+}
+
+
+
+<table class="table ">
+    <tr>
+        <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+        <th>@Html.DisplayNameFor(ww => ww.StudentName)</th>
+        <th>@Html.DisplayNameFor(ww => ww.StudentEductionalNumber)</th>
+        <th>@Html.DisplayNameFor(ww => ww.Email)</th>
+        <th>@Html.DisplayNameFor(ww => ww.Phone)</th>
+        <th>@Html.DisplayNameFor(ww => ww.SocialNumber)</th>
+        <th>@Html.DisplayNameFor(ww => ww.StatusID)</th>
+
+    </tr>
+    @{
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ww => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.StudentEductionalNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.SocialNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.StatusID)
+                </td>
+
+
+
+                <td style="width:100px">
+                    @if (item.StatusID == 1)
+                    {
+                        <font style="color:darkblue">Active</font>
+
+                    }
+                    @if (item.StatusID == 2)
+                    {
+                        <font style="color:Red;">Not Active</font>
+
+
+                    }
+
+                </td>
+
+             
+
+
+            </tr>
+        }
+    }
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

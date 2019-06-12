@@ -1,0 +1,145 @@
+﻿@using Admin.Models
+
+@model IEnumerable<semester>
+@{
+    ViewBag.Title = "Semester";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>@Html.ActionLink("Add New Semester", "Create", "Admin", new { @class = "btn btn-success" })</center>
+
+
+
+
+@*<select class="form-control" id="Semester">
+    <option>-Select Semester ID-</option>
+    @{
+        var sem = (List<semester>)ViewBag.Locations;
+        foreach (var item in sem)
+        {
+
+            <option value="@Html.DisplayFor(ww=>item.ID)"></option>
+           <option value = "@Html.DisplayFor(ww=>item.ID)" > @Html.DisplayFor(ww => item.Semester)</option>
+
+        }
+    }
+</select>*@
+
+
+
+<br />
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<CENTER>
+<table class="table ">
+    <tr>
+        <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+        <th>@Html.DisplayNameFor(ww => ww.Semester)</th>
+        <th>@Html.DisplayNameFor(ww => ww.SemesterFullName)</th>
+        <th>@Html.DisplayNameFor(ww => ww.SemesterArabicName)</th>
+        <th>@Html.DisplayNameFor(ww => ww.SemesterEnumID)</th>
+        <th>@Html.DisplayNameFor(ww => ww.StatusID)</th>
+       
+
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(ww => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.Semester)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.SemesterFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.SemesterArabicName)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.SemesterEnumID)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.StatusID)
+            </td>
+
+            <td style="width:100px">
+                @if (item.StatusID == 1)
+                {
+                    <font style="color:blue;">Active</font>
+
+                }
+                @if (item.StatusID == 2)
+                {
+                    <font style="color:Red;">Not Active</font>
+
+
+                }
+
+            </td>
+            
+            <td style="width:200px">
+                <centr>
+                    
+                    @if (item.StatusID == 1)
+                    {
+
+
+                        @:   @Html.ActionLink("DeActived", "EditStatus", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-danger btn-xs" })
+
+
+                    }
+                    @if (item.StatusID == 2)
+                    {
+
+
+                        @: @Html.ActionLink("Actived", "EditStatus", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-info btn-xs" })
+
+
+
+
+                    }
+                    @*else
+                 {
+                  @:   @Html.ActionLink("Else", "EditActivation_Student", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-info btn-xs" }); |
+
+
+                }*@
+                </centr>
+
+
+            </td>
+
+          
+        </tr>
+        
+    }
+</table>
+
+
+    </CENTER>

@@ -1,0 +1,155 @@
+﻿@using Admin.Models;
+@model Admin.Models.GPA_Grade
+@{
+    ViewBag.Title = "Edit_GPA_Grade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+    <div class="container-contact100">
+
+        <div class="wrap-contact100">
+            <div class="contact100-form-title" style="background-image: url('../../Images/bg-01.jpg'); ">
+                <span class="contact100-form-title-1">
+                    Faculty Of Informations And Computers
+                </span>
+
+                <span class="contact100-form-title-2">
+                    All Permissions are Required To Adminstrator !
+                </span>
+            </div>
+
+
+
+
+            @using (Html.BeginForm("Edit_GPA_Grade", "Admin", FormMethod.Post, new { @class = "contact100-form validate-form" }))
+            {
+
+
+
+                <div class="form-group row">
+
+                    <div class="col-sm-10">
+                        @*@Html.EditorFor(ww => ww.Id, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @* @Html.TextBoxFor(ww => ww.Id, new { @class = "form-control" })*@
+                        @Html.HiddenFor(ww => ww.ID)
+                    </div>
+                    <div class="col-sm-10">
+
+                    </div>
+                </div>
+
+
+
+                <div class="wrap-input100 validate-input" name="Departmenttxt">
+
+                    @Html.LabelFor(ww => ww.Grade_English, htmlAttributes: new { @class = "label-input100" })
+                    <div class="col-sm-10">
+                        @*<span class="label-input100">@Html.LabelFor(ww => ww.Departmenttxt)</span>*@
+
+
+                        @Html.EditorFor(ww => ww.Grade_English, new { htmlAttributes = new { @class = "input100" } })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.ValidationMessageFor(ww => ww.Grade_English)
+                    </div>
+                </div>
+                /////////////////////////////////////////////////////
+
+                <div class="wrap-input100 validate-input">
+
+                    @Html.LabelFor(ww => ww.Grade_Arabic, htmlAttributes: new { @class = "label-input100" })
+                    <div class="col-sm-10">
+
+
+                        @Html.EditorFor(ww => ww.Grade_Arabic, new { htmlAttributes = new { @class = "input100" } })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.ValidationMessageFor(ww => ww.Grade_Arabic)
+                    </div>
+                </div>
+                /////////////////////////////////////////////////////////////
+
+                <div class="wrap-input100 validate-input">
+
+                    @Html.LabelFor(ww => ww.OrderCode, htmlAttributes: new { @class = "label-input100" })
+                    <div class="col-sm-10">
+
+                        @Html.EditorFor(ww => ww.OrderCode, new { htmlAttributes = new { @class = "input100" } })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.ValidationMessageFor(ww => ww.OrderCode)
+                    </div>
+                </div>
+                ////////////////////////////////////////////////////////
+
+                <div class="wrap-input100 validate-input">
+
+                    @Html.LabelFor(ww => ww.Points, htmlAttributes: new { @class = "label-input100" })
+                    <div class="col-sm-10">
+
+                        @Html.EditorFor(ww => ww.Points, new { htmlAttributes = new { @class = "input100" } })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.ValidationMessageFor(ww => ww.Points)
+                    </div>
+                </div>
+                //////////////////////////////////////////////////////////////////
+                <div class="wrap-input100 validate-input">
+
+                    @Html.LabelFor(ww => ww.semesterID, htmlAttributes: new { @class = "label-input100" })
+                    <div class="col-sm-10">
+
+                        @Html.EditorFor(ww => ww.semesterID, new { htmlAttributes = new { @class = "input100" } })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.ValidationMessageFor(ww => ww.semesterID)
+                    </div>
+                </div>
+                //////////////////////////////////////////////////////////////////////
+                <div class="wrap-input100 validate-input">
+
+                    @Html.LabelFor(ww => ww.Course_Points, htmlAttributes: new { @class = "label-input100" })
+                    <div class="col-sm-10">
+
+                        @Html.EditorFor(ww => ww.Course_Points, new { htmlAttributes = new { @class = "input100" } })
+                    </div>
+                    <div class="col-sm-10">
+                        @Html.ValidationMessageFor(ww => ww.Course_Points)
+                    </div>
+                </div>
+                /////////////////////////////////////////////////////////////////////////
+                <div class="wrap-input100 validate-input">
+
+                    @Html.LabelFor(ww => ww.Course_cr_points, htmlAttributes: new { @class = "label-input100" })
+                    <div class="col-sm-10">
+
+                        @Html.EditorFor(ww => ww.Course_cr_points, new { htmlAttributes = new { @class = "input100" } })
+                    </div>
+                    <div class="col-sm-1">
+                        @Html.ValidationMessageFor(ww => ww.Course_cr_points)
+                    </div>
+                </div>
+
+
+
+                <center>
+                    <div class="container-contact100-form-btn">
+                        <button class="contact100-form-btn">
+                            <span>
+                                Submit
+                                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                </center>
+
+            }
+        </div>
+    </div>
+
+
+

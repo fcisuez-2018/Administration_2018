@@ -1,0 +1,99 @@
+﻿@model AdminstratorModule.Models.Users
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slide Login Form Flat Responsive Widget Template :: w3layouts</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Slide Login Form template Responsive, Login form web template, Flat Pricing tables, Flat Drop downs Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <!-- Custom Theme files -->
+    <link href="~/LayoutResourcesLogin/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/LayoutResourcesLogin/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="~/LayoutResourcesLogin///fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+    <!-- //web font -->
+
+</head>
+<body>
+    <!-- main -->
+    <div class="w3layouts-main">
+        <div class="bg-layer">
+
+            <h1>FCI Login form</h1>
+            <div class="header-main">
+                <div class="main-icon">
+                    <span class="fa fa-eercast"></span>
+                </div>
+
+                <div class="header-left-bottom">
+
+                    @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+                    {
+                        <div class="icon1">
+                            <span class="fa fa-user"></span>
+                            @Html.EditorFor(bb => bb.UserName, new { HtmlAttribute = new { @class = "form-label" } })
+                        </div>
+                        <div class="icon1">
+                            <span class="fa fa-lock"></span>
+                            @Html.EditorFor(bb => bb.Password, new { HtmlAttribute = new { @class = "form-label" } })
+                        </div>
+                        <div class="login-check">
+                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Keep me logged in</label>
+                        </div>
+                        <div class="bottom">
+                            <button class="btn">Log In</button>
+                        </div>
+                        <div class="links">
+
+                            <div class="clear"></div>
+                        </div>
+                    }
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>or login using : </li>
+                        <li><a href="www.facebook.com" class="facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="~/LayoutResourcesLogin/=" #" class="twitter"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="~/LayoutResourcesLogin/=" #" class="google"><span class="fa fa-google-plus"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- copyright -->
+            <!-- //copyright -->
+        </div>
+    </div>
+    <!-- //main -->
+
+</body>
+</html>
+
+
+
+
+
+
+

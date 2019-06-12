@@ -1,0 +1,54 @@
+﻿@using Admin.Models
+@model IEnumerable<level>
+@{
+    ViewBag.Title = "level";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+
+<center>
+
+    <table  class="table  ">
+        <tr>
+            <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.LevelTxt)</th>
+            <th>@Html.DisplayNameFor(ww => ww.LevelNumber)</th>
+            <th>@Html.DisplayNameFor(ww => ww.LevelCreditHours)</th>
+            <th>@Html.DisplayNameFor(ww => ww.LevelTxt_Arabic)</th>
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ww => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.LevelTxt)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.LevelNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.LevelCreditHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.LevelTxt_Arabic)
+                </td>
+
+
+
+                <td>
+                    <center>  <pre> @Html.ActionLink("Change", "Edit", "admin",new {id=item.ID},new {@class="btn btn-secondary" }) </pre> </center>
+                </td>
+            </tr>
+        }
+    </table>
+</center>
+
+

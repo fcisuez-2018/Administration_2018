@@ -1,0 +1,64 @@
+﻿@using AdminstratorModule.Models
+
+@model IEnumerable<Students_MIS>
+@{
+    ViewBag.Title = "students_MIS_TEST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center>@Html.ActionLink("Populate From Swift To MIS", "AddNewConfig", "Admin", new { @class = "btn btn-secondary" })</center>
+<br />
+<center>@Html.ActionLink("Populate From MIS To Swift", "AddNewConfig", "Admin", new { @class = "btn b" })</center>
+
+<br />
+<center>
+
+    <table class="table-hover table-bordered  table-striped body-content text-center">
+        <tr>
+            <th>@Html.DisplayNameFor(ww => ww.ED_STUD_ID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.STUD_CODE)</th>
+            <th>@Html.DisplayNameFor(ww => ww.NATIONAL_NUMBER)</th>
+            <th>@Html.DisplayNameFor(ww => ww.FULL_NAME_AR)</th>
+            <th>@Html.DisplayNameFor(ww => ww.FULL_NAME_EN)</th>
+         
+            <th>@Html.DisplayNameFor(ww => ww.FATHER_PROFESSION)</th>
+       
+            <th>@Html.DisplayNameFor(ww => ww.BIRTH_DATE)</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ww => item.ED_STUD_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.STUD_CODE)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.NATIONAL_NUMBER)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.FULL_NAME_AR)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.FULL_NAME_EN)
+                </td>
+           
+                <td>
+                    @Html.DisplayFor(ww => item.FATHER_PROFESSION)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.BIRTH_DATE)
+                </td>
+            
+            
+                @*<td>
+                    <pre> @Html.ActionLink("Change Info", "Edit_GPA_Grade", "Admin",new {id=item.ED_STUD_ID },new {@class= "btn btn-success" }) </pre>
+                </td>*@
+            </tr>
+        }
+    </table>
+</center>
+
+
+

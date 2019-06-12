@@ -1,0 +1,167 @@
+﻿@model IEnumerable<Admin.Models.Student>
+@{
+    ViewBag.Title = "students";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 50%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 3px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+            #myTable th, #myTable td {
+                text-align: center;
+                padding: 12px;
+            }
+
+            #myTable tr {
+                border-bottom: 1px solid #ddd;
+            }
+
+                #myTable tr.header, #myTable tr:hover {
+                    background-color: #f1f1f1;
+                }
+    </style>
+</head>
+<body>
+
+
+    @using (Html.BeginForm("students", "Admin", FormMethod.Get))
+    {
+        //the following are search options
+        <b> Search Option: </b>
+
+      
+        @Html.RadioButton("option", "StudentEductionalNumber") <text>Eductional Number</text>
+
+        <input type="text" id="myInput" name="search" placeholder="Search for Students........" title="Type in a name">
+
+        <input type="submit" value="Search" class="btn btn-success" />
+
+    }
+    <center>@Html.ActionLink("New Student", "Add_student", "Admin", new { @class = "btn btn-dark" })</center>
+    <br />
+
+    <center>
+        <table class="table-responsive table-bordered  table-striped body-content text-center ">
+            <tr>
+                <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+                <th>@Html.DisplayNameFor(ww => ww.StudentName)</th>
+                <th>@Html.DisplayNameFor(ww => ww.StudentEductionalNumber)</th>
+                <th>@Html.DisplayNameFor(ww => ww.Email)</th>
+                <th>@Html.DisplayNameFor(ww => ww.Phone)</th>
+                <th>@Html.DisplayNameFor(ww => ww.SocialNumber)</th>
+                <th>@Html.DisplayNameFor(ww => ww.StatusID)</th>
+
+            </tr>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(ww => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ww => item.StudentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ww => item.StudentEductionalNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ww => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ww => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ww => item.SocialNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ww => item.StatusID)
+                        </td>
+
+
+
+                        <td style="width:100px">
+                            @if (item.StatusID == 1)
+                            {
+                                <font style="color:darkblue">Active</font>
+
+                            }
+                            @if (item.StatusID == 2)
+                            {
+                                <font style="color:Red;">Not Active</font>
+
+
+                            }
+
+                        </td>
+
+                        <td style="width:200px">
+                            <centr>
+                                <a href="/Admin/Edit_Student/@item.ID" class="btn btn-primary btn-xs"><i class="fa fa-pencil"> Edit</i></a> |
+                                @if (item.StatusID == 1)
+                                {
+
+
+                                    @:   @Html.ActionLink("DeActived", "EditActivation_Student", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-danger btn-xs" })
+
+
+
+
+                                }
+                                @if (item.StatusID == 2)
+                                {
+
+
+                                    @: @Html.ActionLink("Actived", "EditActivation_Student", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-info btn-xs" })
+
+
+
+                                }
+                                @*else
+                 {
+                  @:   @Html.ActionLink("Else", "EditActivation_Student", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-info btn-xs" }); |
+
+
+                }*@
+                            </centr>
+
+
+                        </td>
+
+
+
+                    </tr>
+                }
+            }
+        </table>
+
+    </center>
+
+</body>
+</html>
+
+

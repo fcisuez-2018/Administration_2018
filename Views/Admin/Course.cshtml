@@ -1,0 +1,240 @@
+﻿@using Admin.Models
+
+@model IEnumerable<Course>
+@{
+    ViewBag.Title = "Course";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+     * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 35%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 9px;
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+            #myTable th, #myTable td {
+                text-align: center;
+                padding: 12px;
+            }
+
+            #myTable tr {
+                border-bottom: 1px solid #ddd;
+            }
+
+                #myTable tr.header, #myTable tr:hover {
+                    background-color: #f1f1f1;
+                }
+        .dropbtn {
+            background-color: indianred;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+
+    @*@using (Html.BeginForm("Course", "Admin", FormMethod.Get))
+    {
+        //the following are search options
+
+
+
+
+
+    <center> <input type="text" id="myInput" name="search" placeholder="Search for Courses........" title="Type in a name"></center>
+
+    <center>  <input type="submit" value="Search" class="btn btn-success" /></center>
+
+    }*@
+
+    <center>
+
+        <div class="dropdown">
+            <button class="dropbtn">Filtered Courses</button>
+            <div class="dropdown-content">
+                <b> <a href="/Admin/Cr_general">عامه</a></b>
+                <b> <a href="/Admin/Cr_IT">تكنولوجيا المعلومات</a></b>
+
+                <b> <a href="/Admin/Cr_CS">علوم الحاسب</a></b>
+                <b> <a href="/Admin/Cr_IS">نظم المعلومات</a></b>
+                <b><a href="/Admin/Cr_SE">هندسه البرمجيات</a></b>
+
+            </div>
+        </div>
+    </center>
+
+
+</body>
+</html>
+
+
+ @Html.ActionLink(" New Course", "Add_course", "Admin", new { @class = "btn btn-success" })
+
+<br />
+<br />
+
+<table class="table-hover table-bordered  table-striped body-content text-center">
+
+    <tr class="danger">
+        <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+        <th>@Html.DisplayNameFor(ww => ww.Code)</th>
+
+        <th>@Html.DisplayNameFor(ww => ww.ArabicName)</th>
+        <th>@Html.DisplayNameFor(ww => ww._Course)</th>
+        <th>@Html.DisplayNameFor(ww => ww.Credits)</th>
+        <th>@Html.DisplayNameFor(ww => ww.Prerequisits)</th>
+        <th>@Html.DisplayNameFor(ww => ww.FinalExam)</th>
+        <th>@Html.DisplayNameFor(ww => ww.TimeofExam)</th>
+        <th>@Html.DisplayNameFor(ww => ww.DepartmentID)</th>
+        <th>@Html.DisplayNameFor(ww => ww.LeveLID)</th>
+        </>
+        @foreach (var item in Model)
+        {
+
+        <tr class="success">
+            <td>
+                @Html.DisplayFor(ww => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.ArabicName)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item._Course)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.Credits)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.Prerequisits)
+            </td>
+
+            <td>
+                @Html.DisplayFor(ww => item.FinalExam)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.TimeofExam)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.DepartmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.LeveLID)
+            </td>
+
+            <td style="width:100px">
+                @if (item.StatusID == 1)
+                {
+                    <font style="color:darkblue">Active</font>
+
+                }
+                @if (item.StatusID == 2)
+                {
+                    <font style="color:Red;">Not Active</font>
+
+
+                }
+
+            </td>
+           
+                <td>
+                    <center>
+                        <pre> @Html.ActionLink("Change Info", "Edit_Course", "Admin",new {id=item.ID},new {@class="btn btn-primary" }) </pre>
+                    </center></td>
+          
+      
+
+            <td style="width:200px">
+                <centr>
+                 
+                    @if (item.StatusID == 1)
+                    {
+
+
+                        @:   @Html.ActionLink("Available", "EditActivation_ALLCourses", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-danger btn-xs" })
+
+                    }
+                    @if (item.StatusID == 2)
+                    {
+
+
+                        @: @Html.ActionLink("Not Available", "EditActivation_ALLCourses", "Admin", new { ID = item.ID, StatusID = item.StatusID }, new { @class = "btn btn-info btn-xs" })
+
+
+
+
+                    }
+
+                </centr>
+
+
+            </td>
+
+
+
+
+        </tr>
+
+        }
+    </table>
+
+
+

@@ -1,0 +1,77 @@
+﻿@using Admin.Models
+@model IEnumerable<CourseSemester>
+@{
+    ViewBag.Title = "Course_Semester";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<center>
+    <select class="dropdown-header" id="Semester">
+        <option>-Select Semester-</option>
+        @{
+            var sem = (List<CourseSemester>)ViewBag.Locations;
+            foreach (var item in sem)
+            {
+
+                <option value="@Html.DisplayFor(ww=>item.ID_sem)"></option>
+                <option value="@Html.DisplayFor(ww=>item.ID_sem)"> @Html.DisplayFor(ww => item.Semester)</option>
+
+            }
+        }
+    </select>
+</center>*@
+
+
+<center>
+    <table class="table-hover table-bordered  table-striped body-content text-center">
+        <tr>
+            <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Code)</th>
+            <th>@Html.DisplayNameFor(ww => ww.ArabicName)</th>
+            <th>@Html.DisplayNameFor(ww => ww._Course)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Semester)</th>
+            <th>@Html.DisplayNameFor(ww => ww.SemesterFullName)</th>
+            <th>@Html.DisplayNameFor(ww => ww.DoctorID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Name_Txt)</th>
+            <th>@Html.DisplayNameFor(ww => ww.Arabic_doctorName)</th>
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ww => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.ArabicName)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item._Course)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Semester)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.SemesterFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.DoctorID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Name_Txt)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.Arabic_doctorName)
+                </td>
+
+
+                @*<td>
+                    <pre>  @Html.ActionLink("Remove", "Delete", "Admin",new {id=item.ID },new {@class="btn btn-danger",onclick="return confirm('Are u Sure!!!')" })</pre>
+                </td>*@
+            </tr>
+        }
+    </table>
+</center>

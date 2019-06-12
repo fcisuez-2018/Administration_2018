@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Admin.Models.Student>
+@{
+    ViewBag.Title = "students_IS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table class="table navbar-btn table-bordered  table-striped ">
+    <tr>
+        <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+        <th>@Html.DisplayNameFor(ww => ww.StudentName)</th>
+        <th>@Html.DisplayNameFor(ww => ww.StudentEductionalNumber)</th>
+        <th>@Html.DisplayNameFor(ww => ww.StatusID)</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(ww => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.StudentEductionalNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(ww => item.StatusID)
+            </td>
+
+
+
+        </tr>
+    }
+</table>

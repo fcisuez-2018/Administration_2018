@@ -1,0 +1,60 @@
+﻿@using Admin.Models;
+@model IEnumerable<AdminConfig>
+
+@{
+    ViewBag.Title = "Configrations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<center>@Html.ActionLink("Add New Configration", "AddNewConfig", "Admin", new { @class = "btn btn-dark" })</center>
+
+<center>
+    <br />
+
+
+    <table class="table caption">
+        <tr>
+            <th>@Html.DisplayNameFor(ww => ww.ID)</th>
+            <th>@Html.DisplayNameFor(ww => ww.ConfigName)</th>
+            <th>@Html.DisplayNameFor(ww => ww.ConfigValue)</th>
+            <th>@Html.DisplayNameFor(ww => ww.parentID)</th>
+
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ww => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.ConfigName)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.ConfigValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(ww => item.parentID)
+                </td>
+       
+
+
+
+                @*<td>
+                    <pre> @Html.ActionLink("Change Info", "Edit_Config", "Admin",new {id=item.ID},new {@class= "btn btn-info btn-xs" }) </pre>
+                </td>*@
+            </tr>
+        }
+    </table>
+
+</center>
+
+
+
+
+
+
+
